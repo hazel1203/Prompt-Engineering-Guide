@@ -1,0 +1,200 @@
+\documentclass[a4paper,10pt]{article}
+
+% ===== PACKAGES =====
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ebgaramond}              % Serif font matching reference image
+\usepackage[margin=1.2cm, top=1cm, bottom=1cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{multicol}
+
+% ===== COLORS (matched from reference image) =====
+\definecolor{accent}{HTML}{6B8FA3}      % Muted steel-blue / teal for headings & name
+\definecolor{textmain}{HTML}{333333}    % Dark charcoal body text
+\definecolor{textsecondary}{HTML}{666666} % Medium gray for dates & secondary info
+\definecolor{sectionline}{HTML}{CCCCCC}  % Light gray rule under sections
+\definecolor{profilebg}{HTML}{EEF2F4}   % Subtle tinted background for profile box
+
+% ===== PAGE SETUP =====
+\color{textmain}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=accent,
+    urlcolor=textsecondary,
+    pdfborder={0 0 0}
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% ===== SECTION FORMATTING =====
+\titleformat{\section}
+  {\normalfont\bfseries\fontsize{12}{14}\selectfont\color{accent}\uppercase}
+  {}
+  {0em}
+  {}
+  [\vspace{-0.5em}\textcolor{sectionline}{\rule{\textwidth}{0.4pt}}]
+
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+% =============================================
+%  MAIN JOB ENTRY (Company level)
+%  Usage: \jobentry{Company Name}{Date Range}
+% =============================================
+\newcommand{\jobentry}[2]{%
+  \vspace{4pt}
+  \noindent{\textbf{\textsc{#1}}}\hfill{\color{textsecondary}#2}\\[-6pt]
+}
+
+% =============================================
+%  SUB-JOB ENTRY (Role/Team level)
+%  Usage: \subjobentry{Role Title}{Team / Detail}{Date Range}
+% =============================================
+\newcommand{\subjobentry}[3]{%
+  \vspace{3pt}
+  \noindent\hspace{8pt}{\textsc{#1}}\hspace{4pt}{\color{textsecondary}--- #2}\hfill{\color{textsecondary}\small #3}\\[-6pt]
+}
+
+\begin{document}
+
+% ===========================
+%        HEADER
+% ===========================
+{\fontsize{28}{34}\selectfont{\bfseries\color{accent}Trang}\hspace{6pt}Le Thu}
+
+\vspace{6pt}
+{\small\color{textsecondary}%
+Email: trangthlp03@gmail.com \quad\textbar\quad Mobile: 096-495-0346 \quad\textbar\quad 
+linkedin.com/in/trangthlp03 \quad\textbar\quad trangthlp03.framer.website}
+
+% ===========================
+%        PROFILE
+% ===========================
+\section{About me}
+
+\begin{tcolorbox}[
+  colback=profilebg,
+  colframe=profilebg,
+  coltext=textmain,
+  boxrule=0pt,
+  arc=4pt,
+  left=10pt, right=10pt, top=8pt, bottom=8pt
+]
+Product professional with 3+ years spanning business analysis, UX research, and product ownership in fintech and insurtech. Track record of driving measurable outcomes --- lifting CSAT from 2.7 to 4.4, cutting usability errors by 40\%, and improving policy issuance rate by 50\% --- by anchoring decisions in user research and VOC data. Experienced in owning full product delivery cycles from discovery through release, working cross-functionally with Engineering, Design, Business, and Ops teams.
+\end{tcolorbox}
+
+% ===========================
+%        EDUCATION
+% ===========================
+\section{Education}
+
+\noindent\textbf{Foreign Trade University, B.S. International Business Economics} \hfill {\color{textsecondary}2019 -- 2023}
+
+\vspace{2pt}
+{\small\color{textsecondary}GPA: 3.45 $\cdot$ FTU Academic Scholarship 2023 $\cdot$ Google UX Design Certificate (Coursera) $\cdot$ Business Analysis Foundation (Hai Lua, 2022)}
+
+% ===========================
+%     WORK EXPERIENCE
+% ===========================
+\section{Work Experience}
+
+% ============================================================
+%  VPS Securities Corp. - Product Owner
+% ============================================================
+\jobentry{VPS Securities Corp.}{Nov 2025 -- Present}
+
+\subjobentry{Product Owner}{SMO App team}{Nov 2025 -- Present}
+
+\begin{itemize}[leftmargin=16pt, itemsep=2pt, parsep=0pt, topsep=2pt, label=\textcolor{textsecondary}{\textbullet}]
+  \item Owning end-to-end product lifecycle of the \textbf{in-app rating \& feedback management system} for SMO App --- from problem definition and PRD writing through sprint coordination, stakeholder alignment, and release; currently in active development
+  
+  \item Delivered ``Lucky Money for VPSers'' gamification campaign feature on time for T\^{e}t 2026, coordinating across 3 engineering squads, Design, and Marketing with a hard seasonal deadline; feature shipped to all SMO App users
+  
+  \item Building centralized \textbf{Feedback Form \& Management Dashboard} to consolidate user signals from multiple touchpoints into one internal platform, enabling data-driven product decisions at scale
+\end{itemize}
+
+% ============================================================
+%  VNDIRECT Securities Corp. (Jan 2023 -- Aug 2025)
+%    ├── Product Designer - PTI Insurance team
+%    └── Product Business Analyst - Wealth Management team
+% ============================================================
+\jobentry{VNDIRECT Securities Corp.}{Jan 2023 -- Aug 2025}
+
+% --- Sub-role 1: Product Designer ---
+\subjobentry{Product Designer}{PTI Insurance team}{Jan 2025 -- Aug 2025}
+
+\begin{itemize}[leftmargin=16pt, itemsep=2pt, parsep=0pt, topsep=2pt, label=\textcolor{textsecondary}{\textbullet}]
+  \item Led end-to-end redesign of the PTICare app (5,000+ DAU), leveraging VOC data and quantitative metrics to overhaul information architecture, design system, and UX writing; delivered a measurably smoother insurance claim experience
+  
+  \item Owned redesign of insurance issuance flows on the iPTI sales app (300+ DAU), streamlining the end-to-end sales process through usability testing and rapid iteration: outcomes included a \textbf{50\% increase in policy issuance rate}, a 25\% boost in user engagement, and CSAT improvement from 2.7 to 4.4/5.0
+  
+  \item Revamped home dashboard and navigation for \textbf{MyDGO app and MyAccount web}, improving information architecture for wealth management users across two platforms
+\end{itemize}
+
+% --- Sub-role 2: Product Business Analyst ---
+\subjobentry{Product Business Analyst}{Wealth Management team}{Jul 2023 -- Dec 2024}
+
+\begin{itemize}[leftmargin=16pt, itemsep=2pt, parsep=0pt, topsep=2pt, label=\textcolor{textsecondary}{\textbullet}]
+  \item Delivered \textbf{Mutual Fund trading flows} (buy / sell / portfolio management) across MyAccount Web, DGO App, and TISA App, collaborating with 3 platform teams from discovery through UAT
+  
+  \item Contributed to development of \textbf{Learning and Social modules} within TISA App as the sole BA, working directly with backend developers on feature definition, API mapping, and usability testing with university student cohorts
+  
+  \item Conducted \textbf{5+ user research projects} (in-depth interviews, usability studies) for Margin and Wealth Management products, producing personas and journey maps that \textbf{reduced usability errors by 40\%}
+  
+  \item Established a VOC feedback loop using \textbf{Power BI dashboards}, delivering weekly analytical reports to product leadership; surfaced competitor benchmarking insights that identified 3+ feature gaps later added to the product backlog
+  
+  \item Translated complex business requirements into BRD/SRS and API mappings; coordinated with frontend developers for feature implementation and facilitated UAT cycles
+\end{itemize}
+
+% ============================================================
+%  EVN Finance JSC.
+% ============================================================
+\jobentry{EVN Finance JSC.}{Aug 2022 -- Jun 2023}
+
+\subjobentry{Business Analyst}{Digital Banking team}{Aug 2022 -- Jun 2023}
+
+\begin{itemize}[leftmargin=16pt, itemsep=2pt, parsep=0pt, topsep=2pt, label=\textcolor{textsecondary}{\textbullet}]
+  \item Managed full product lifecycle of the \textbf{Entrustment Loan mobile feature} --- policy definition, wireframing, backend customization (LEMS), and UAT --- coordinating a cross-functional dev team of 5 (2 FE, 3 BE)
+  
+  \item Ensured \textbf{100\% compliance} with financial and legal regulations through close coordination with Legal and Accounting during requirements definition; organized internal training workshops post-launch
+\end{itemize}
+
+% ============================================================
+%  FTU Human Resources Club
+% ============================================================
+\jobentry{FTU Human Resources Club}{Aug 2019 -- Oct 2020}
+
+\subjobentry{Product Specialist}{Marketing \& Content team}{Aug 2019 -- Oct 2020}
+
+\begin{itemize}[leftmargin=16pt, itemsep=2pt, parsep=0pt, topsep=2pt, label=\textcolor{textsecondary}{\textbullet}]
+  \item Managed digital touchpoints for a career platform with \textbf{40,000+ monthly visitors}; executed data-driven campaigns (email, social, web) that reached \textbf{1.8M audience} and attracted \textbf{1,800+ contestants} nationwide
+  
+  \item Revamped the ``Skill Tab'' feature using WordPress, improving information architecture and content discoverability based on user interview and survey insights
+\end{itemize}
+
+% ===========================
+%         SKILLS
+% ===========================
+\section{Skills}
+
+\vspace{2pt}
+\begin{tabularx}{\textwidth}{@{}X X@{}}
+\textbf{Product \& Delivery:} {\small Backlog management, roadmap planning, PRD/BRD/SRS writing, API mapping, UAT, stakeholder alignment, sprint coordination} &
+\textbf{UX \& Research:} {\small User interviews, usability testing, VOC analysis, journey mapping, persona, information architecture, wireframing, prototyping} \\[8pt]
+
+\textbf{Data \& Analytics:} {\small Power BI, data analysis, competitor benchmarking, CSAT/NPS tracking} &
+\textbf{Tools:} {\small Figma, Jira, Confluence, Draw.io / Visio / Whimsical, Postman, DBeaver, Microsoft Office} \\[8pt]
+
+\textbf{Domain:} {\small Fintech (mutual fund, margin, wealth management), insurtech, securities} &
+\textbf{Languages:} {\small English --- C1 CEFR (APTIS Certified, 2020)} \\
+\end{tabularx}
+
+\end{document}
